@@ -22,7 +22,7 @@ function ex6(){
 
 }
     
-function calcularMedia() {
+function ex7() {
     var nota1 = parseFloat(document.getElementById('nota1').value);
     var nota2 = parseFloat(document.getElementById('nota2').value);
     var nota3 = parseFloat(document.getElementById('nota3').value);
