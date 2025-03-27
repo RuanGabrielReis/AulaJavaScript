@@ -31,3 +31,47 @@ function ex7() {
 
     document.getElementById('media').innerText = 'A média aritmética é: ' + media.toFixed(2);
 }
+
+function ex8() {
+    const peso = parseFloat(document.getElementById("peso").value);
+    const altura = parseFloat(document.getElementById("altura").value);
+
+    if (isNaN(peso) || isNaN(altura) || altura <= 0) {
+        document.getElementById("resultadoIMC").innerText = "Por favor, insira valores válidos para peso e altura.";
+        return;
+    }
+
+    const imc = peso / (altura * altura);
+
+    document.getElementById("resultadoIMC").innerText = `O seu IMC é: ${imc.toFixed(2)}`;
+}
+
+function ex9() {
+    const valorInicial = parseFloat(document.getElementById("valorInicial").value);
+    const taxaJuros = parseFloat(document.getElementById("taxaJuros").value) / 100; 
+    const tempo = parseFloat(document.getElementById("tempo").value);
+
+    if (isNaN(valorInicial) || isNaN(taxaJuros) || isNaN(tempo) || valorInicial <= 0 || taxaJuros < 0 || tempo <= 0) {
+        document.getElementById("resultadoMontante").innerText = "Por favor, insira valores válidos.";
+        return;
+    }
+
+    const montante = valorInicial * (1 + (taxaJuros * tempo));
+
+    document.getElementById("resultadoMontante").innerText = `O montante é: R$ ${montante.toFixed(2)}`;
+}
+
+function ex10() {
+    const valorHora = parseFloat(document.getElementById("valorHora").value);
+    const horasPorDia = parseFloat(document.getElementById("horasPorDia").value);
+
+    if (isNaN(valorHora) || isNaN(horasPorDia) || valorHora <= 0 || horasPorDia <= 0) {
+        document.getElementById("resultadoSalario").innerText = "Por favor, insira valores válidos.";
+        return;
+    }
+
+    const diasTrabalhados = 30;
+    const salarioMensal = valorHora * horasPorDia * diasTrabalhados;
+
+    document.getElementById("resultadoSalario").innerText = `O salário mensal é: R$ ${salarioMensal.toFixed(2)}`;
+}
